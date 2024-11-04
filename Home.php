@@ -29,23 +29,12 @@ for ($i=0 ; $i<5 ; $i++){
         </article>
 <?php }
 ?>
-       <h3>Vous Pourriez Aimer : </h3>
-       <ul>
-<?php 
-for ($i=0 ; $i<5 ; $i++){
-?> 
-       <li> 
-        <article>
-            <h4>Titre du film</h4>
-            <p>n étoiles d'après les utilisateurs </p>
-        </article>
-        </li>
-<?php }
-?>
-        </ul>
+       
 
 
     </main>
+
+    <footer> </footer>
 
 </body>
 
