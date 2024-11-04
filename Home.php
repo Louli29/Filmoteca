@@ -3,7 +3,7 @@
 <head>
     <title>Filmoteca Accueil</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="Home.css">
+    <link rel="stylesheet" type="text/css" href="Home.css">
 </head>
 
 <body>
@@ -15,28 +15,29 @@
     <main>
 
         <h3>Les Derniers Ajouts : </h3>
+        
         <div class="mesFichesFilm">
-<?php 
-for ($i=0 ; $i<5 ; $i++){
-?>
+            <?php 
+            for ($i=0 ; $i<3 ; $i++){
+            ?>
 
-        <article>
-            <h4>Titre du film</h4>
-            <h5>Mon commentaire : </h5> 
-            <p> blabla  </p>
-            <footer> 
+            <article>
+                <h4>Titre du film</h4>
+                <h5>Mon commentaire : </h5> 
+                <p> blabla  </p> 
                 <h5>Ma note : </h5> 
-            </footer>
-        </article>
-<?php }
-?>
+                
+            </article>
+            <?php }
+            ?>
         </div>
+
        
 
 
     </main>
 
-    <footer> </footer>
+    <footer class="fPage"> </footer>
 
 </body>
 

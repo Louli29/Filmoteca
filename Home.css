@@ -1,15 +1,37 @@
-h1{
+header{
     text-align: center;
+    align-content: center;
     color: rgb(94, 2, 2);
+    background-color: rgb(185, 191, 237);
+    height: 5em;
 }
 
-.mesFichesfilm{
+.footer{
+    height: 5em;
+    background-color: rgb(185, 191, 237);
+}
+
+.mesFichesFilm{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+    
 }
 
 article{
-    border-width: 1 em;
+    margin: 1em;
+    padding :1em;
+    border:solid;
+    border-width: 0.7em;
+    border-color: rgb(94, 2, 2) ;
+    width: 20em;
+    
+}
 
+h4{
+    text-align:center;
+}
+
+body{
+    padding : 1em
 }
