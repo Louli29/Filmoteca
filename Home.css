@@ -2,19 +2,44 @@ header{
     text-align: center;
     align-content: center;
     color: rgb(94, 2, 2);
-    background-color: rgb(185, 191, 237);
+    background-color: rgb(197, 204, 255);
     height: 5em;
 }
 
-.footer{
-    height: 5em;
-    background-color: rgb(185, 191, 237);
+body{
+    padding : 1em;
+    background-color: rgb(253, 247, 239);
 }
+
+footer{
+    background-color: rgb(197, 204, 255);
+    height: 5em;
+    align-content: center;
+    text-align: center;
+    margin-top :1em;
+}
+
+h4{
+    text-align:center;
+    color:rgb(94, 2, 2);
+}
+
+h3{
+    color:rgb(94, 2, 2);
+    text-decoration: underline;
+}
+
+h5{
+    text-decoration: underline;
+}
+
+
 
 .mesFichesFilm{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
     
 }
 
@@ -23,19 +48,23 @@ article{
     padding :1em;
     border:solid;
     border-width: 0.7em;
-    border-color: rgb(94, 2, 2) ;
+    border-color: rgb(165, 168, 189);
     width: 20em;
     
 }
 
 table{
-    border:solid;
+    border-collapse:collapse;
 }
 
-h4{
-    text-align:center;
+thead{
+    background-color: rgb(165, 168, 189);
 }
 
-body{
-    padding : 1em
+td{
+    border: solid;
+    border-color:rgb(165, 168, 189) ;
+    border-collapse: collapse;
+    padding:0.5em;
 }
+

@@ -30,10 +30,11 @@ $resultatReq=$conn->query($req);
     <header>
         <h1> Bienvenue sur Filmoteca </h1>
     </header>
+    
 
     <main>
 
-        <h3>Les Derniers Ajouts : </h3>
+        <h3>Mes Derniers Commentaires : </h3>
         
         <div class="mesFichesFilm">
             <?php 
@@ -53,7 +54,7 @@ $resultatReq=$conn->query($req);
         <h3>Liste Films : </h3>
         <table>
             <thead><tr>
-                <td>Titre</td>
+                <td>  Titre  </td>
                 <td >Année de sortie </td>
                 <td>Synopsis </td>
                 <td >Genre </td>
@@ -66,7 +67,7 @@ $resultatReq=$conn->query($req);
                 
             ?>
                 <tr>
-                <td><?php echo $row["title"]?></td>
+                <td><b><?php echo $row["title"]?></b></td>
                 <td > <?php echo $row["year"]?></td>
                 <td><?php echo $row["synopsis"]?></td>
                 <td ><?php echo $row["genre"]?></td>
@@ -81,7 +82,9 @@ $resultatReq=$conn->query($req);
 
     </main>
 
-    <footer class="fPage"> </footer>
+    <footer> 
+        <p>Nous suivre !</p>
+    </footer>
 
 </body>
 
