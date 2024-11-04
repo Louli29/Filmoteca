@@ -3,7 +3,7 @@
 <head>
     <title>Filmoteca Accueil</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="Home.css">
+    <link rel="stylesheet" type="Home.css">
 </head>
 
 <body>
@@ -15,6 +15,7 @@
     <main>
 
         <h3>Les Derniers Ajouts : </h3>
+        <div class="mesFichesFilm">
 <?php 
 for ($i=0 ; $i<5 ; $i++){
 ?>
@@ -29,6 +30,7 @@ for ($i=0 ; $i<5 ; $i++){
         </article>
 <?php }
 ?>
+        </div>
        
 
 

@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    color: rgb(94, 2, 2);
+}
+
+.mesFichesfilm{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+article{
+    border-width: 1 em;
+
+}
