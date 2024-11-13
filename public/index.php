@@ -21,10 +21,11 @@
 
 <?php
 
-$router=new Router(); // pour l'instant je n'ai pas eu le temps de faire la classe
+require_once 'Router.php';
 
-$router->register('/film',function(){
-    return 'Film Page';
-});
+
+
+$router=new Router(); 
+$router->route();
 
 ?>
