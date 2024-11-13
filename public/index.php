@@ -18,3 +18,13 @@
     </footer>
 </body>
 </html>
+
+<?php
+
+$router=new Router(); // pour l'instant je n'ai pas eu le temps de faire la classe
+
+$router->register('/film',function(){
+    return 'Film Page';
+});
+
+?>
