@@ -29,13 +29,19 @@ class FilmController
         }
             */
 
-        header('Content-Type: application/json');
-        echo json_encode($films);
+        //header('Content-Type: application/json');
+        //echo json_encode($films);
     }
 
-    public function create()
+    public function create($nb)
     {
-        echo "Création d'un film";
+        $filmRepository = new FilmRepository();
+        $films = $filmRepository->findAll();
+        foreach($films as $film ){
+            if($film.getId()==$nb){
+                dd($film);
+            }
+        }
     }
 
     public function read()
