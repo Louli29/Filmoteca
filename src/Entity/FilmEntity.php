@@ -12,7 +12,10 @@ class FilmEntity{
     $created_at;
 
     public FilmEntity(){
-        $id=$_GET[''];
+        $id=$_GET['id'];
+        $title=$_GET[''];
+        $year=$_GET[''];
+        $genre=$_GET[''];
         
     }
 

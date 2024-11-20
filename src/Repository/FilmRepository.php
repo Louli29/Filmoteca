@@ -8,6 +8,17 @@ class FilmRepository{
 
     $dbh = new PDO($dsn, $user, $password);
 
+    public function getInfo(): array{
+        $req='SELECT * FROM film';
+        $rep=$dbh->query($req);
+
+        $resultat=[];
+        while($row=$rep->fetch(PDO::FETCH_ASSOC)){
+            $resultat[]=$rows;
+        }
+        return $resultat;
+
+    }
     
 }
 
