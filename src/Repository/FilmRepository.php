@@ -2,21 +2,17 @@
 
 class FilmRepository{
 
-    $dsn = 'mysql:dbname=filmoteca;host=127.0.0.1';
-    $user = 'filmoteca_user';
-    $password = 'filmoteca_password';
+    namespace App\Repository;
+    use App\Core\DatabaseConnection;
 
-    $dbh = new PDO($dsn, $user, $password);
+    public function __construct(){
+        $this->db=DatabaseConnection::getConnection();
+    }
 
-    public function getInfo(): array{
-        $req='SELECT * FROM film';
-        $rep=$dbh->query($req);
-
-        $resultat=[];
-        while($row=$rep->fetch(PDO::FETCH_ASSOC)){
-            $resultat[]=$rows;
-        }
-        return $resultat;
+    public function findAll(): array{
+        $query='SELECT * FROM film';
+        $stmt=$this->db->query($query);
+        return $stmt->fetchAll();
 
     }
     
