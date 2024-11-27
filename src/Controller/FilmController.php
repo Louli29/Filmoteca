@@ -49,7 +49,14 @@ class FilmController
 
     public function create()
     {
-        echo "Création d'un film";
+        $filmRepository = new FilmRepository();
+        $id;
+        $title;
+        $year;
+        $type;
+        $synopsis;
+        $director;
+        $films = $filmRepository->create($id,$title, $year,$type,$synopsis,$director);
     }
 
     public function read(array $queryParams)
