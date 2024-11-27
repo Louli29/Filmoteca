@@ -1,0 +1,29 @@
+{% extends "Mother.html.twig" %}
+{% block main %}
+    <h3>Ajouter un film</h3>
+
+
+    <form>
+    <li>
+        <label for="title">Titre :</label>
+        <input type="text" id="title" name="title" require/>
+    </li><li>
+        <label for="year">Année :</label>
+        <input type="text" id="year" name="year" require/>
+    </li><li>
+        <label for="type">Genre :</label>
+        <input type="text" id="type" name="type" require/>
+    </li>
+    </li><li>
+        <label for="synopsis">Résumé :</label>
+        <input type="text" id="synopsis" name="synopsis" require/>
+    </li>
+    </li><li>
+        <label for="director">Réalisateur :</label>
+        <input type="text" id="director" name="director" require/>
+    </li>
+
+    </form>
+
+
+{% endblock %}
