@@ -1,17 +1,5 @@
 <?php
 
-$serveur = "localhost";
-$utilisateur = "root";
-$mot_de_passe = "";
-$BD = "filmoteca";
-$conn = new mysqli($serveur, $utilisateur, $mot_de_passe, $BD);
-
-
-$req="SELECT title,year,synopsis,genre FROM movie ";
-$resultatReq=$conn->query($req);
-
-    
-
 ?>
 
 
@@ -34,23 +22,6 @@ $resultatReq=$conn->query($req);
 
     <main>
 
-        <h3>Mes Derniers Commentaires : </h3>
-        
-        <div class="mesFichesFilm">
-            <?php 
-            for ($i=0 ; $i<3 ; $i++){
-            ?>
-
-            <article>
-                <h4>Titre du film</h4>
-                <h5>Mon commentaire : </h5> 
-                <p> blabla  </p> 
-                <h5>Ma note : </h5> 
-            </article>
-            <?php }
-            ?>
-        </div>
-
         <h3>Liste Films : </h3>
         <table>
             <thead><tr>
@@ -62,7 +33,8 @@ $resultatReq=$conn->query($req);
             </tr></thead>
             <tbody>
             <?php 
-            for ($i=0 ; $i<$resultatReq->num_rows ; $i++){
+            $films= new FilmController();            
+            foreach (){
                 $row = $resultatReq->fetch_assoc();
                 
             ?>
@@ -83,7 +55,7 @@ $resultatReq=$conn->query($req);
     </main>
 
     <footer> 
-        <p>Nous suivre !</p>
+    <p>&copy; 2023 Filmoteca. All rights reserved.</p>
     </footer>
 
 </body>

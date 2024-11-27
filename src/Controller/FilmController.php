@@ -1,52 +1,71 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Entity\Film;
 use App\Repository\FilmRepository;
 
 class FilmController
 {
-    public function list()
+    public function list(array $queryParams)
     {
         $filmRepository = new FilmRepository();
         $films = $filmRepository->findAll();
 
-        /*$filmEntities=[];
-        foreach($films as $film ){
-            $filmEntity=new Film();
+        $htmlTemplate = file_get_contents('/var/www/filmoteca/src/view/List.html');
+
+        // Générer les lignes de la table
+        $rows = '';
+        foreach ($films as $film) {
+            $rows .= '<tr>';
+            $rows .= '<td>' . htmlspecialchars($film->getTitle()) . '</td>';
+            $rows .= '<td>' . htmlspecialchars($film->getType()) . '</td>';
+            $rows .= '<td>' . htmlspecialchars($film->getYear()) . '</td>';
+            $rows .= '<td>' . htmlspecialchars($film->getDirector()) . '</td>';
+            $rows .= '<td>' . htmlspecialchars($film->getSynopsis()) . '</td>';
+            $rows .= '</tr>';
+        }
+
+        // Remplacer le placeholder {{films}} dans le HTML
+        $htmlOutput = str_replace('{{films}}', $rows, $htmlTemplate);
+
+        return $htmlOutput;
+
+        /* $filmEntities = [];
+        foreach ($films as $film) {
+            $filmEntity = new Film();
             $filmEntity->setId($film['id']);
             $filmEntity->setTitle($film['title']);
             $filmEntity->setYear($film['year']);
             $filmEntity->setType($film['type']);
             $filmEntity->setSynopsis($film['synopsis']);
             $filmEntity->setDirector($film['director']);
-            $filmEntity->setDeletedAt($film['deletedAt']);
-            $filmEntity->setCreatedAt($film['createdAt']);
-            $filmEntity->setUpdateAt($film['updatedAt']);
+            $filmEntity->setCreatedAt(new \DateTime($film['created_at']));
+            $filmEntity->setUpdatedAt(new \DateTime($film['updated_at']));
 
-            $filmEntities[]=$filmEntity;
-        }
-            */
+            $filmEntities[] = $filmEntity;
+        } */
 
-        //header('Content-Type: application/json');
-        //echo json_encode($films);
+        //dd($films);
+
+
+        // header('Content-Type: application/json');
+        // echo json_encode($films);
     }
 
-    public function create($nb)
+    public function create()
+    {
+        echo "Création d'un film";
+    }
+
+    public function read(array $queryParams)
     {
         $filmRepository = new FilmRepository();
-        $films = $filmRepository->findAll();
-        foreach($films as $film ){
-            if($film.getId()==$nb){
-                dd($film);
-            }
-        }
-    }
+        $film = $filmRepository->find((int) $queryParams['id']);
 
-    public function read()
-    {
-        echo "Lecture d'un film";
+        dd($film);
     }
 
     public function update()

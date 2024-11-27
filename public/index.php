@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmoteca</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to Filmoteca</h1>
-    </header>
-    <main>
-        <p>Your content goes here.</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 Filmoteca. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-
 <?php
 
-require __DIR__.'./../vendor/autoload.php';
+declare(strict_types=1); // Déclare le mode strict pour les types de données
 
-use App\Core\Router;
+require __DIR__ . '/../vendor/autoload.php'; // Charge automatiquement les classes nécessaires via Composer
 
-$router=new Router(); 
-$router->route();
+use App\Core\Router; // Utilise la classe Router du namespace App\Core
 
+// FRONT-CONTROLLER
+$router = new Router(); // Crée une nouvelle instance de la classe Router
+$router->route(); // Appelle la méthode route() pour gérer les requêtes entrantes
 ?>
