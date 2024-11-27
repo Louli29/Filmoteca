@@ -1,0 +1,17 @@
+{
+    "name": "filmoteca/filmoteca",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lou Cartier"
+        }
+    ],
+    "require": {}
+
+
+}
