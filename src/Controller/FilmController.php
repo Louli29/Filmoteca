@@ -6,32 +6,23 @@ namespace App\Controller;
 
 use App\Entity\Film;
 use App\Repository\FilmRepository;
+use \App\Core\TwigEnvironment;
 
 class FilmController
 {
+    private \Twig\Environment $twig;
+
+    public function __construct(){
+        $this->twig = \App\Core\TwigEnvironment::create();
+        
+    }
+
     public function list(array $queryParams)
     {
         $filmRepository = new FilmRepository();
         $films = $filmRepository->findAll();
-
-        $htmlTemplate = file_get_contents('/var/www/filmoteca/src/view/List.html');
-
-        // Générer les lignes de la table
-        $rows = '';
-        foreach ($films as $film) {
-            $rows .= '<tr>';
-            $rows .= '<td>' . htmlspecialchars($film->getTitle()) . '</td>';
-            $rows .= '<td>' . htmlspecialchars($film->getType()) . '</td>';
-            $rows .= '<td>' . htmlspecialchars($film->getYear()) . '</td>';
-            $rows .= '<td>' . htmlspecialchars($film->getDirector()) . '</td>';
-            $rows .= '<td>' . htmlspecialchars($film->getSynopsis()) . '</td>';
-            $rows .= '</tr>';
-        }
-
-        // Remplacer le placeholder {{films}} dans le HTML
-        $htmlOutput = str_replace('{{films}}', $rows, $htmlTemplate);
-
-        return $htmlOutput;
+        echo $this->twig->render('list.html.twig', ['films' => $films, ]);
+        
 
         /* $filmEntities = [];
         foreach ($films as $film) {
@@ -49,6 +40,7 @@ class FilmController
         } */
 
         //dd($films);
+
 
 
         // header('Content-Type: application/json');

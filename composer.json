@@ -11,9 +11,10 @@
             "name": "Lou Cartier"
         }
     ],
-    "require": {
+    "require-dev": {
         "symfony/var-dumper": "^7.1"
+    },
+    "require": {
+        "twig/twig": "^3.0"
     }
-
-
 }
