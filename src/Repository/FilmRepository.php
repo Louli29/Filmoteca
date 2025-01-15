@@ -55,8 +55,9 @@ class FilmRepository
 
     public function create($id,$title, $year,$type,$synopsis,$director):void{
         $date = date('Y-m-d H:i:s');
-        INSERT INTO 'film' (`id`, `title`, `year`, `type`, `synopsis`, `director`, `deleted_at`, `created_at`, `updated_at`) VALUES
-        ($id,$title, $year,$type,$synopsis,$director,' ',$date,$date);
+        $query = 'INSERT INTO film (`id`, `title`, `year`, `type`, `synopsis`, `director`, `deleted_at`, `created_at`, `updated_at`) VALUES
+        ($id, $title, $year, $type, $synopsis, $director,$date);
+        $stmt = $this->db->execute($query)';
     }
 }
 ?>
