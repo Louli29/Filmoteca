@@ -6,30 +6,33 @@
     <h3>Ajouter un film</h3>
 
 
-    <form action= "" method="post">
-    <li>
-        <label for="title">Titre :</label>
-        <input type="text" id="title" name="title" require/>
-    </li>
-    <li>
-        <label for="year">Année :</label>
-        <input type="text" id="year" name="year" require/>
-    </li>
-    <li>
-        <label for="type">Genre :</label>
-        <input type="text" id="type" name="type" require/>
-    </li>
-    </li>
-    <li>
-        <label for="synopsis">Résumé :</label>
-        <input type="text" id="synopsis" name="synopsis" require/>
-    </li>
-    </li>
-    <li>
-        <label for="director">Réalisateur :</label>
-        <input type="text" id="director" name="director" require/>
-    </li>
-    <button type="submit" name="valider"> Ajouter  </button>
+    <form action= "" method="post" >
+        <div class="mb-3">
+            <label for="title">Titre :</label>
+            <input type="text" class="form-control" id="title" name="title" require/>
+        </div>
+
+        <div class="mb-3">
+            <label for="year">Année :</label>
+            <input type="text" class="form-control" id="year" name="year" require/>
+        </div>
+
+        <div class="mb-3">
+            <label for="type">Genre :</label>
+            <input type="text" class="form-control" id="type" name="type" require/>
+        </div>
+  
+        <div class="mb-3">
+           <label for="synopsis">Résumé :</label>
+            <input type="text" class="form-control" id="synopsis" name="synopsis" require/>
+        </div>
+
+        <div class="mb-3">
+            <label for="director">Réalisateur :</label>
+            <input type="text" class="form-control" id="director" name="director" require/>
+        </div>
+   
+    <button type="submit" class="btn btn-secondary" name="valider"> Ajouter  </button>
 
     </form>
 

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Film {% endblock %}
+
+{% block content %}
+    <h2 class="mb-4">{{ film.title }} </h2>
+                
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ film.year }}</li>
+        <li class="list-group-item">{{ film.type }}</li>
+        <li class="list-group-item">{{ film.director }}</li>
+        <li class="list-group-item">{{ film.synopsis }}</li>
+        <li class="list-group-item">{{ film.createdAt.format('d/m/Y H:i') }}</li>
+        <li class="list-group-item">{{ film.updatedAt.format('d/m/Y H:i') }}</li>
+    
+    </ul>
+{% endblock %}

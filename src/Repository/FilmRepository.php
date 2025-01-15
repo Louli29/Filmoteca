@@ -77,5 +77,39 @@ class FilmRepository
         $stmt->execute();
     }
 
+    public function delete(int $id) :void 
+    {
+        $query='DELETE FROM film WHERE id=:id';
+        $stmt=$this->db->prepare($query);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+
+    }
+
+    public function update(int $id, Film $film) :void
+    {
+        $title=$film->getTitle();
+        $year=$film->getYear();
+        $type=$film->getType();
+        $synopsis=$film->getSynopsis();
+        $director=$film->getDirector();
+        $date = (new \DateTime())->format('Y-m-d H:i:s');
+        
+
+        $query='UPDATE film SET title=:title, year=:year, type=:type, synopsis=:synopsis, director=:director, updated_at=:updated_at ) WHERE id=:id';
+        $stmt=$this->db->prepare($query);
+
+        $stmt->bindParam(':title',$id);
+
+        $stmt->bindParam(':title',$title);
+        $stmt->bindParam(':year',$year);
+        $stmt->bindParam(':type',$type);
+        $stmt->bindParam(':synopsis',$synopsis);
+        $stmt->bindParam(':director',$director);
+        $stmt->bindParam(':updated_at',$date);
+
+        $stmt->execute();
+    }
+
 
 }

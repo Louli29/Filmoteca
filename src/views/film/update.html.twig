@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Modifier {% endblock %}
+
+{% block content %}
+    <h3>Modifier {{film.title}}</h3>
+
+
+    <form action= "" method="post" >
+        <div class="mb-3">
+            <label for="title">Titre :</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{film.title}}" require/>
+        </div>
+
+        <div class="mb-3">
+            <label for="year">Année :</label>
+            <input type="text" class="form-control" id="year" name="year" value="{{film.year}}" require/>
+        </div>
+
+        <div class="mb-3">
+            <label for="type">Genre :</label>
+            <input type="text" class="form-control" id="type" name="type" value="{{film.type}}" require/>
+        </div>
+  
+        <div class="mb-3">
+           <label for="synopsis">Résumé :</label>
+            <input type="text" class="form-control" id="synopsis" name="synopsis" value="{{film.synopsis}}" require/>
+        </div>
+
+        <div class="mb-3">
+            <label for="director">Réalisateur :</label>
+            <input type="text" class="form-control" id="director" name="director" value="{{film.director}}" require/>
+        </div>
+   
+    <button type="submit" class="btn btn-secondary" name="modifierValid"> Valider les modification  </button>
+
+    </form>
+
+
+{% endblock %}
