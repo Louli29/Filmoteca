@@ -7,5 +7,3 @@ namespace App\Controller;
 class ContactController
 {
 }
-
-?>

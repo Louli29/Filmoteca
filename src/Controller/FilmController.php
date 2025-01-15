@@ -4,25 +4,23 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Core\TemplateRenderer;
 use App\Entity\Film;
 use App\Repository\FilmRepository;
-use \App\Core\TwigEnvironment;
 
 class FilmController
 {
-    private \Twig\Environment $twig;
+    private TemplateRenderer $renderer;
 
-    public function __construct(){
-        $this->twig = \App\Core\TwigEnvironment::create();
-        
+    public function __construct()
+    {
+        $this->renderer = new TemplateRenderer();
     }
 
     public function list(array $queryParams)
     {
         $filmRepository = new FilmRepository();
         $films = $filmRepository->findAll();
-        echo $this->twig->render('list.html.twig', ['films' => $films, ]);
-        
 
         /* $filmEntities = [];
         foreach ($films as $film) {
@@ -41,7 +39,9 @@ class FilmController
 
         //dd($films);
 
-
+        echo $this->renderer->render('film/list.html.twig', [
+            'films' => $films,
+        ]);
 
         // header('Content-Type: application/json');
         // echo json_encode($films);
@@ -49,14 +49,7 @@ class FilmController
 
     public function create()
     {
-        $filmRepository = new FilmRepository();
-        $id;
-        $title;
-        $year;
-        $type;
-        $synopsis;
-        $director;
-        $films = $filmRepository->create($id,$title, $year,$type,$synopsis,$director);
+        echo $this->renderer->render('film/create.html.twig');
     }
 
     public function read(array $queryParams)
@@ -77,4 +70,3 @@ class FilmController
         echo "Suppression d'un film";
     }
 }
-?>

@@ -44,4 +44,3 @@ class EntityMapper
         return $entities;
     }
 }
-?>
