@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Core\TemplateRenderer;
 use App\Entity\Film;
 use App\Repository\FilmRepository;
+use App\Service\EntityMapper;
 
 class FilmController
 {
@@ -47,8 +48,18 @@ class FilmController
         // echo json_encode($films);
     }
 
-    public function create()
+    public function create() :void
     {
+        
+        if ($_POST != null){
+            $entityMapper= new EntityMapper();
+            $film=new Film();
+            $film=$entityMapper->mapToEntity($_POST, Film::class);
+            $filmRepository = new FilmRepository();
+            $filmRepository->create($film);
+            header('Location: /film/list');
+        }
+
         echo $this->renderer->render('film/create.html.twig');
     }
 
